@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="errorApp">
+<head>
+    <title>Error <%= error.status || 500 %></title>
+    <!-- INCLUDE SHARED HEAD -->
+    <%- include('partials/head') %>
+</head>
+<body class="bg-dark text-gray-200 h-screen overflow-hidden flex items-center justify-center relative font-sans" ng-controller="ErrorController">
+
+<!-- Background Effects -->
+<div class="absolute inset-0 bg-grid z-0 pointer-events-none"></div>
+<div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-accentGreen/5 blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-accentBlue/5 blur-[100px] pointer-events-none"></div>
+
+<div class="container mx-auto px-6 relative z-10 max-w-4xl text-center">
+
+    <!-- Error Code -->
+    <h1 class="text-[150px] md:text-[200px] font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-accentGreen to-accentBlue glow-text select-none anim-target">
+        <%= error.status || 500 %>
+    </h1>
+
+    <!-- Server Error Message (Technical) -->
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 mt-[-20px] anim-target">
+        <%= message || "Something went wrong" %>
+    </h2>
+
+    <!-- User Friendly Message (Angular Translate) -->
+    <p class="text-muted text-lg mb-10 max-w-lg mx-auto anim-target" ng-bind="t[lang].desc"></p>
+
+    <!-- Action Buttons -->
+    <div class="flex justify-center gap-6 mb-12 anim-target">
+        <a href="/" class="px-8 py-3 rounded-full bg-accentGreen text-dark font-bold hover:bg-white transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-[0_0_20px_rgba(0,255,157,0.2)]">
+            <i class="fa-solid fa-house"></i> <span ng-bind="t[lang].home"></span>
+        </a>
+        <button ng-click="goBack()" class="px-8 py-3 rounded-full border border-gray-700 text-gray-300 font-bold hover:border-accentBlue hover:text-accentBlue transition-all duration-300">
+            <span ng-bind="t[lang].back"></span>
+        </button>
+    </div>
+
+    <!-- Stack Trace (Dev Mode Only) -->
+    <% if (error.stack) { %>
+        <div class="text-left mt-8 anim-target">
+            <div class="bg-card border border-red-900/30 rounded-xl overflow-hidden shadow-2xl">
+                <div class="bg-red-900/20 px-4 py-2 border-b border-red-900/30 flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span class="ml-2 text-xs font-mono text-red-400">System Error Log</span>
+                </div>
+                <pre class="p-6 overflow-auto max-h-[200px] text-sm font-mono text-red-300 bg-black/50 custom-scrollbar leading-relaxed"><%= error.stack %></pre>
+            </div>
+        </div>
+    <% } %>
+
+</div>
+
+<!-- ANGULAR LOGIC -->
+<script>
+    var app = angular.module('errorApp', []);
+
+    app.controller('ErrorController', ['$scope', '$window', '$timeout', function($scope, $window, $timeout) {
+
+        // 1. Get Language from LocalStorage
+        const savedLang = localStorage.getItem('fpt_lang');
+        $scope.lang = savedLang ? savedLang : 'vi';
+
+        // 2. Dictionary
+        $scope.t = {
+            vi: {
+                desc: "Oops! Có vẻ như bạn đã lạc vào một vùng không gian chưa được lập trình hoặc dữ liệu không tồn tại.",
+                home: "Trở về trang chủ",
+                back: "Quay lại"
+            },
+            en: {
+                desc: "Oops! It seems you've wandered into an unprogrammed void or the data does not exist.",
+                home: "Back to Home",
+                back: "Go Back"
+            }
+        };
+
+        // 3. Go Back Function
+        $scope.goBack = function() {
+            $window.history.back();
+        };
+
+        // 4. Init Animation (Wait for Angular to render)
+        $timeout(function() {
+            anime({
+                targets: '.anim-target',
+                opacity: [0, 1],
+                translateY: [30, 0],
+                delay: anime.stagger(100),
+                duration: 800,
+                easing: 'easeOutExpo'
+            });
+        }, 0);
+
+    }]);
+</script>
+
+</body>
+</html>

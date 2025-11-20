@@ -1,0 +1,29 @@
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #00ff9d; }
+.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #141414; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+.anim-el { opacity: 0; transform: translateY(30px); }
+.nav-dot {
+    transition: all 0.3s ease;
+}
+.nav-dot.active {
+    background-color: #00ff9d;
+    transform: scale(1.5);
+    box-shadow: 0 0 10px #00ff9d;
+}
+.glow-bg-green::before {
+    content: ''; position: absolute; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0, 255, 157, 0.08) 0%, transparent 70%);
+    top: -10%; right: -10%; z-index: 0; pointer-events: none;
+}
+.glow-bg-blue::before {
+    content: ''; position: absolute; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0, 184, 255, 0.08) 0%, transparent 70%);
+    bottom: -10%; left: -10%; z-index: 0; pointer-events: none;
+}
+[ng-cloak] { display: none !important; }
+.lang-switch { transition: all 0.3s ease; }
+.lang-switch:hover { transform: scale(1.05); }
