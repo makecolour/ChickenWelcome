@@ -118,40 +118,39 @@
 
     <!-- SECTION 5: ROADMAP -->
     <section id="sec-5" class="min-h-screen flex items-center justify-center relative glow-bg-green py-24" scroll-observer>
-        <div class="container mx-auto px-6">
-            <h2 class="anim-el text-4xl md:text-5xl font-bold mb-24 text-center text-white" ng-bind="content.roadmap_title"></h2>
-
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="anim-el text-4xl md:text-5xl font-bold mb-24 text-white" ng-bind="content.roadmap_title"></h2>
             <div class="relative max-w-6xl mx-auto">
                 <div class="absolute top-1/2 left-0 w-full h-1 bg-gray-800 transform -translate-y-1/2 hidden md:block z-0 rounded-full"></div>
                 <div class="grid grid-cols-1 md:grid-cols-5 gap-6 relative z-10">
-                    <!-- 1 -->
-                    <div class="anim-el bg-card p-6 rounded-2xl border border-gray-800 text-center md:transform md:hover:-translate-y-4 transition-transform duration-300 shadow-lg">
-                        <div class="w-16 h-16 rounded-full bg-dark border-4 border-accentGreen text-white font-bold flex items-center justify-center mx-auto mb-6 relative z-20 text-lg shadow-[0_0_20px_rgba(0,255,157,0.3)]">Prep</div>
-                        <h4 class="text-accentGreen font-bold text-xl mb-2" ng-bind="content.roadmap_1_title"></h4>
+                    <!-- 1: Prep - Yellow -->
+                    <div class="anim-el bg-card p-6 rounded-2xl border border-yellow-500/30 text-center md:transform md:hover:-translate-y-4 transition-transform duration-300 shadow-lg">
+                        <div class="w-16 h-16 rounded-full bg-dark border-4 border-yellow-500 text-white font-bold flex items-center justify-center mx-auto mb-6 relative z-20 text-lg shadow-[0_0_20px_rgba(234,179,8,0.3)]">Prep</div>
+                        <h4 class="text-yellow-500 font-bold text-xl mb-2" ng-bind="content.roadmap_1_title"></h4>
                         <p class="text-sm text-muted" ng-bind="content.roadmap_1_desc"></p>
                     </div>
-                    <!-- 2 -->
-                    <div class="anim-el bg-card p-6 rounded-2xl border border-gray-800 text-center md:transform md:hover:-translate-y-4 transition-transform duration-300 shadow-lg">
-                        <div class="w-16 h-16 rounded-full bg-dark border-4 border-gray-700 text-white font-bold flex items-center justify-center mx-auto mb-6 relative z-20 text-lg">1-3</div>
-                        <h4 class="text-white font-bold text-xl mb-2" ng-bind="content.roadmap_2_title"></h4>
+                    <!-- 2: Phase 1 - Emerald -->
+                    <div class="anim-el bg-card p-6 rounded-2xl border border-emerald-500/30 text-center md:transform md:hover:-translate-y-4 transition-transform duration-300 shadow-lg">
+                        <div class="w-16 h-16 rounded-full bg-dark border-4 border-emerald-500 text-white font-bold flex items-center justify-center mx-auto mb-6 relative z-20 text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)]">1-3</div>
+                        <h4 class="text-emerald-400 font-bold text-xl mb-2" ng-bind="content.roadmap_2_title"></h4>
                         <p class="text-sm text-muted" ng-bind="content.roadmap_2_desc"></p>
                     </div>
-                    <!-- 3 -->
-                    <div class="anim-el bg-card p-6 rounded-2xl border border-gray-800 text-center md:transform md:hover:-translate-y-4 transition-transform duration-300 shadow-lg">
-                        <div class="w-16 h-16 rounded-full bg-dark border-4 border-gray-700 text-white font-bold flex items-center justify-center mx-auto mb-6 relative z-20 text-lg">4-5</div>
-                        <h4 class="text-white font-bold text-xl mb-2" ng-bind="content.roadmap_3_title"></h4>
+                    <!-- 3: Phase 2 - Cyan -->
+                    <div class="anim-el bg-card p-6 rounded-2xl border border-cyan-500/30 text-center md:transform md:hover:-translate-y-4 transition-transform duration-300 shadow-lg">
+                        <div class="w-16 h-16 rounded-full bg-dark border-4 border-cyan-500 text-white font-bold flex items-center justify-center mx-auto mb-6 relative z-20 text-lg shadow-[0_0_20px_rgba(6,182,212,0.3)]">4-5</div>
+                        <h4 class="text-cyan-400 font-bold text-xl mb-2" ng-bind="content.roadmap_3_title"></h4>
                         <p class="text-sm text-muted" ng-bind="content.roadmap_3_desc"></p>
                     </div>
-                    <!-- 4 -->
-                    <div class="anim-el bg-card p-6 rounded-2xl border border-gray-800 text-center md:transform md:hover:-translate-y-4 transition-transform duration-300 shadow-lg">
-                        <div class="w-16 h-16 rounded-full bg-dark border-4 border-accentBlue text-white font-bold flex items-center justify-center mx-auto mb-6 relative z-20 text-lg shadow-[0_0_20px_rgba(0,184,255,0.3)]">6</div>
-                        <h4 class="text-accentBlue font-bold text-xl mb-2" ng-bind="content.roadmap_4_title"></h4>
+                    <!-- 4: Phase 3 - Orange -->
+                    <div class="anim-el bg-card p-6 rounded-2xl border border-orange-500/30 text-center md:transform md:hover:-translate-y-4 transition-transform duration-300 shadow-lg">
+                        <div class="w-16 h-16 rounded-full bg-dark border-4 border-orange-500 text-white font-bold flex items-center justify-center mx-auto mb-6 relative z-20 text-lg shadow-[0_0_20px_rgba(249,115,22,0.3)]">6</div>
+                        <h4 class="text-orange-400 font-bold text-xl mb-2" ng-bind="content.roadmap_4_title"></h4>
                         <p class="text-sm text-muted" ng-bind="content.roadmap_4_desc"></p>
                     </div>
-                    <!-- 5 -->
-                    <div class="anim-el bg-card p-6 rounded-2xl border border-gray-800 text-center md:transform md:hover:-translate-y-4 transition-transform duration-300 shadow-lg">
-                        <div class="w-16 h-16 rounded-full bg-dark border-4 border-gray-700 text-white font-bold flex items-center justify-center mx-auto mb-6 relative z-20 text-lg">7-9</div>
-                        <h4 class="text-white font-bold text-xl mb-2" ng-bind="content.roadmap_5_title"></h4>
+                    <!-- 5: Phase 4+5 - Purple/Rose -->
+                    <div class="anim-el bg-card p-6 rounded-2xl border border-purple-500/30 text-center md:transform md:hover:-translate-y-4 transition-transform duration-300 shadow-lg">
+                        <div class="w-16 h-16 rounded-full bg-dark border-4 border-purple-500 text-white font-bold flex items-center justify-center mx-auto mb-6 relative z-20 text-lg shadow-[0_0_20px_rgba(168,85,247,0.3)]">7-9</div>
+                        <h4 class="text-purple-400 font-bold text-xl mb-2" ng-bind="content.roadmap_5_title"></h4>
                         <p class="text-sm text-muted" ng-bind="content.roadmap_5_desc"></p>
                     </div>
                 </div>
@@ -159,14 +158,11 @@
         </div>
     </section>
 
+    <!-- PHASE PREP: YELLOW -->
     <section id="sec-prep" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-            <!-- Left: Image (Grid layout for diversity) -->
             <div class="order-1 anim-el grid grid-cols-2 gap-4 relative">
-                <!-- Decorative background blob -->
                 <div class="absolute inset-0 bg-yellow-500/10 blur-3xl -z-10 transform scale-110"></div>
-
                 <div class="space-y-4 mt-8">
                     <img src="/images/LUK.jpg" class="rounded-2xl shadow-lg w-full h-48 object-cover hover:scale-105 transition-transform duration-500 border border-gray-800" alt="English Class">
                     <div class="bg-card border border-gray-700 p-6 rounded-2xl flex flex-col justify-center items-center text-center h-48">
@@ -182,151 +178,121 @@
                     <img src="/images/nhaccu.jpg" class="rounded-2xl shadow-lg w-full h-64 object-cover hover:scale-105 transition-transform duration-500 border border-gray-800" alt="Soft Skills">
                 </div>
             </div>
-
-            <!-- Right: Content -->
             <div class="order-2">
                 <div class="anim-el inline-block px-4 py-2 rounded-lg border border-yellow-500 text-yellow-500 text-xs font-bold mb-6 tracking-[0.2em] uppercase" ng-bind="content.prep_label"></div>
                 <h2 class="anim-el text-4xl md:text-5xl font-bold mb-6 text-white" ng-bind="content.prep_title"></h2>
                 <p class="anim-el text-muted text-lg mb-8" ng-bind="content.prep_desc"></p>
-
                 <ul class="space-y-6">
-                    <!-- Feature 1: English -->
                     <div class="anim-el flex gap-5 group">
-                        <div class="w-14 h-14 rounded-full bg-yellow-500/10 text-yellow-500 flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300">
-                            <i class="fa-solid fa-comment-dots"></i>
-                        </div>
-                        <div>
-                            <p class="text-gray-300 leading-relaxed" ng-bind="content.prep_feat_1"></p>
-                        </div>
+                        <div class="w-14 h-14 rounded-full bg-yellow-500/10 text-yellow-500 flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300"><i class="fa-solid fa-comment-dots"></i></div>
+                        <div><p class="text-gray-300 leading-relaxed" ng-bind="content.prep_feat_1"></p></div>
                     </div>
-
-                    <!-- Feature 2: Soft Skills -->
                     <div class="anim-el flex gap-5 group">
-                        <div class="w-14 h-14 rounded-full bg-yellow-500/10 text-yellow-500 flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300">
-                            <i class="fa-solid fa-users"></i>
-                        </div>
-                        <div>
-                            <p class="text-gray-300 leading-relaxed" ng-bind="content.prep_feat_2"></p>
-                        </div>
+                        <div class="w-14 h-14 rounded-full bg-yellow-500/10 text-yellow-500 flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300"><i class="fa-solid fa-users"></i></div>
+                        <div><p class="text-gray-300 leading-relaxed" ng-bind="content.prep_feat_2"></p></div>
                     </div>
-
-                    <!-- Feature 3: Culture -->
                     <div class="anim-el flex gap-5 group">
-                        <div class="w-14 h-14 rounded-full bg-yellow-500/10 text-yellow-500 flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300">
-                            <i class="fa-solid fa-guitar"></i>
-                        </div>
-                        <div>
-                            <p class="text-gray-300 leading-relaxed" ng-bind="content.prep_feat_3"></p>
-                        </div>
+                        <div class="w-14 h-14 rounded-full bg-yellow-500/10 text-yellow-500 flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300"><i class="fa-solid fa-guitar"></i></div>
+                        <div><p class="text-gray-300 leading-relaxed" ng-bind="content.prep_feat_3"></p></div>
                     </div>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- PHASE 1: PREP & FOUNDATION -->
+    <!-- PHASE 1: EMERALD (Green) -->
     <section id="sec-phase1" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="order-2 lg:order-1">
-                <div class="anim-el inline-block px-4 py-2 rounded-lg border border-gray-600 text-gray-400 text-xs font-bold mb-6 tracking-[0.2em] uppercase" ng-bind="content.phase1_label"></div>
+                <div class="anim-el inline-block px-4 py-2 rounded-lg border border-emerald-500 text-emerald-400 text-xs font-bold mb-6 tracking-[0.2em] uppercase" ng-bind="content.phase1_label"></div>
                 <h2 class="anim-el text-4xl md:text-5xl font-bold mb-6 text-white" ng-bind="content.phase1_title"></h2>
                 <p class="anim-el text-muted text-lg mb-8" ng-bind="content.phase1_desc"></p>
                 <ul class="space-y-4">
-                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-accentGreen transition-colors duration-300">
-                        <i class="fa-solid fa-person-military-pointing text-accentGreen text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase1_feat_1"></span>
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-emerald-500 transition-colors duration-300">
+                        <i class="fa-solid fa-person-military-pointing text-emerald-400 text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase1_feat_1"></span>
                     </li>
-                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-accentGreen transition-colors duration-300">
-                        <i class="fa-solid fa-language text-accentGreen text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase1_feat_2"></span>
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-emerald-500 transition-colors duration-300">
+                        <i class="fa-solid fa-language text-emerald-400 text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase1_feat_2"></span>
                     </li>
-                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-accentGreen transition-colors duration-300">
-                        <i class="fa-solid fa-code text-accentGreen text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase1_feat_3"></span>
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-emerald-500 transition-colors duration-300">
+                        <i class="fa-solid fa-code text-emerald-400 text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase1_feat_3"></span>
                     </li>
                 </ul>
             </div>
             <div class="order-1 lg:order-2 anim-el h-[400px] rounded-3xl overflow-hidden border border-gray-800 relative group">
-                <div class="absolute inset-0 bg-accentGreen/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 bg-emerald-500/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img src="/images/ftalent.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Phase 1">
             </div>
         </div>
     </section>
 
-    <!-- PHASE 2: SPECIALIZATION (UPDATED: Granular Animation) -->
+    <!-- PHASE 2: CYAN (Blue/Cyan) -->
     <section id="sec-phase2" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="anim-el h-[400px] rounded-3xl overflow-hidden border border-gray-800 relative group">
-                <div class="absolute inset-0 bg-accentBlue/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 bg-cyan-500/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img src="/images/project.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Phase 2">
             </div>
             <div>
-                <div class="anim-el inline-block px-4 py-2 rounded-lg border border-accentBlue text-accentBlue text-xs font-bold mb-6 tracking-[0.2em] uppercase" ng-bind="content.phase2_label"></div>
+                <div class="anim-el inline-block px-4 py-2 rounded-lg border border-cyan-500 text-cyan-400 text-xs font-bold mb-6 tracking-[0.2em] uppercase" ng-bind="content.phase2_label"></div>
                 <h2 class="anim-el text-4xl md:text-5xl font-bold mb-6 text-white" ng-bind="content.phase2_title"></h2>
                 <p class="anim-el text-muted text-lg mb-8" ng-bind="content.phase2_desc"></p>
                 <ul class="space-y-4">
-                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-accentBlue transition-colors duration-300">
-                        <i class="fa-solid fa-sitemap text-accentBlue text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase2_feat_1"></span>
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-cyan-500 transition-colors duration-300">
+                        <i class="fa-solid fa-sitemap text-cyan-400 text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase2_feat_1"></span>
                     </li>
-                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-accentBlue transition-colors duration-300">
-                        <i class="fa-solid fa-users-gear text-accentBlue text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase2_feat_2"></span>
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-cyan-500 transition-colors duration-300">
+                        <i class="fa-solid fa-users-gear text-cyan-400 text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase2_feat_2"></span>
                     </li>
-                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-accentBlue transition-colors duration-300">
-                        <i class="fa-solid fa-list-check text-accentBlue text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase2_feat_3"></span>
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-cyan-500 transition-colors duration-300">
+                        <i class="fa-solid fa-list-check text-cyan-400 text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase2_feat_3"></span>
                     </li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- PHASE 3: OJT (Granular Applied for consistency) -->
-    <section id="sec-phase3" class="min-h-screen flex items-center justify-center relative glow-bg-blue py-24" scroll-observer>
+    <!-- PHASE 3: ORANGE -->
+    <section id="sec-phase3" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <!-- Left: Content -->
             <div class="order-2 lg:order-1">
-                <div class="anim-el inline-block px-4 py-2 rounded-lg bg-accentBlue text-black text-xs font-bold mb-6 tracking-[0.2em] uppercase" ng-bind="content.phase3_label"></div>
+                <div class="anim-el inline-block px-4 py-2 rounded-lg bg-orange-500 text-black text-xs font-bold mb-6 tracking-[0.2em] uppercase" ng-bind="content.phase3_label"></div>
                 <h2 class="anim-el text-5xl md:text-6xl font-black mb-8 text-white" ng-bind="content.phase3_title"></h2>
                 <p class="anim-el text-xl text-gray-300 mb-10 leading-relaxed" ng-bind="content.phase3_desc"></p>
 
-                <!-- Feature List (Stacked Vertically) -->
                 <div class="space-y-4">
-                    <!-- Item 1 -->
-                    <div class="anim-el bg-card p-5 rounded-xl border border-gray-700 flex items-center gap-5 hover:border-accentBlue transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-full bg-accentBlue/10 flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-building text-2xl text-accentBlue group-hover:scale-110 transition-transform"></i>
+                    <div class="anim-el bg-card p-5 rounded-xl border border-gray-700 flex items-center gap-5 hover:border-orange-500 transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-full bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-building text-2xl text-orange-500 group-hover:scale-110 transition-transform"></i>
                         </div>
                         <h3 class="text-lg font-bold text-white" ng-bind="content.phase3_feat_1"></h3>
                     </div>
-                    <!-- Item 2 -->
-                    <div class="anim-el bg-card p-5 rounded-xl border border-gray-700 flex items-center gap-5 hover:border-accentBlue transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-full bg-accentBlue/10 flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-handshake text-2xl text-accentBlue group-hover:scale-110 transition-transform"></i>
+                    <div class="anim-el bg-card p-5 rounded-xl border border-gray-700 flex items-center gap-5 hover:border-orange-500 transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-full bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-handshake text-2xl text-orange-500 group-hover:scale-110 transition-transform"></i>
                         </div>
                         <h3 class="text-lg font-bold text-white" ng-bind="content.phase3_feat_2"></h3>
                     </div>
-                    <!-- Item 3 -->
-                    <div class="anim-el bg-card p-5 rounded-xl border border-gray-700 flex items-center gap-5 hover:border-accentBlue transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-full bg-accentBlue/10 flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-id-card text-2xl text-accentBlue group-hover:scale-110 transition-transform"></i>
+                    <div class="anim-el bg-card p-5 rounded-xl border border-gray-700 flex items-center gap-5 hover:border-orange-500 transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-full bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-id-card text-2xl text-orange-500 group-hover:scale-110 transition-transform"></i>
                         </div>
                         <h3 class="text-lg font-bold text-white" ng-bind="content.phase3_feat_3"></h3>
                     </div>
                 </div>
             </div>
-
-            <!-- Right: Image (NEW) -->
             <div class="order-1 lg:order-2 anim-el h-[500px] lg:h-[600px] rounded-3xl overflow-hidden border border-gray-800 relative group shadow-2xl">
-                <div class="absolute inset-0 bg-accentBlue/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <!-- Thay đường dẫn ảnh dưới đây bằng ảnh văn phòng làm việc thực tế của FPT Software nếu có -->
+                <div class="absolute inset-0 bg-orange-500/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img src="/images/FPTSW2650.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="OJT Environment">
-
-                <!-- Floating Badge overlay on Image -->
-                <div class="absolute bottom-8 left-8 bg-dark/80 backdrop-blur-md border border-accentBlue px-6 py-4 rounded-2xl z-20">
-                    <div class="text-accentBlue font-bold text-2xl">100%</div>
+                <div class="absolute bottom-8 left-8 bg-dark/80 backdrop-blur-md border border-orange-500 px-6 py-4 rounded-2xl z-20">
+                    <div class="text-orange-500 font-bold text-2xl">100%</div>
                     <div class="text-xs text-gray-300 uppercase tracking-wider">Sinh viên làm việc thật</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PHASE 4: ADVANCED (UPDATED: Granular Animation for "Nâng cao & Khởi nghiệp") -->
+    <!-- PHASE 4: PURPLE -->
     <section id="sec-phase4" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="order-2 lg:order-1">
@@ -352,19 +318,22 @@
         </div>
     </section>
 
-    <!-- PHASE 5: CAPSTONE -->
+    <!-- PHASE 5: ROSE/PINK -->
     <section id="sec-phase5" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
         <div class="container mx-auto px-6">
-            <div class="anim-el bg-gradient-to-br from-gray-900 to-black p-12 lg:p-20 rounded-[3rem] border border-accentGreen/30 shadow-[0_0_60px_rgba(0,255,157,0.1)] relative overflow-hidden text-center">
+            <div class="anim-el bg-gradient-to-br from-gray-900 to-black p-12 lg:p-20 rounded-[3rem] border border-rose-500/30 shadow-[0_0_60px_rgba(244,63,94,0.1)] relative overflow-hidden text-center">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-rose-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+
                 <div class="relative z-10 max-w-4xl mx-auto">
-                    <div class="inline-block px-4 py-2 rounded-full bg-accentGreen text-black text-xs font-bold mb-8 tracking-[0.2em] uppercase" ng-bind="content.phase5_label"></div>
-                    <div class="text-accentGreen text-7xl mb-8"><i class="fa-solid fa-trophy"></i></div>
+                    <div class="inline-block px-4 py-2 rounded-full bg-rose-500 text-white text-xs font-bold mb-8 tracking-[0.2em] uppercase" ng-bind="content.phase5_label"></div>
+                    <div class="text-rose-500 text-7xl mb-8"><i class="fa-solid fa-trophy"></i></div>
                     <h2 class="text-5xl md:text-6xl font-black text-white mb-8" ng-bind="content.phase5_title"></h2>
                     <p class="text-xl text-muted mb-12 leading-relaxed" ng-bind="content.phase5_desc"></p>
+
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                        <div class="bg-white/5 p-6 rounded-xl border-l-4 border-accentGreen"><h4 class="font-bold text-white mb-2">Product</h4><p class="text-sm text-gray-400" ng-bind="content.phase5_feat_1"></p></div>
-                        <div class="bg-white/5 p-6 rounded-xl border-l-4 border-accentGreen"><h4 class="font-bold text-white mb-2">Defense</h4><p class="text-sm text-gray-400" ng-bind="content.phase5_feat_2"></p></div>
-                        <div class="bg-white/5 p-6 rounded-xl border-l-4 border-accentGreen"><h4 class="font-bold text-white mb-2">Future</h4><p class="text-sm text-gray-400" ng-bind="content.phase5_feat_3"></p></div>
+                        <div class="bg-white/5 p-6 rounded-xl border-l-4 border-rose-500"><h4 class="font-bold text-white mb-2">Product</h4><p class="text-sm text-gray-400" ng-bind="content.phase5_feat_1"></p></div>
+                        <div class="bg-white/5 p-6 rounded-xl border-l-4 border-rose-500"><h4 class="font-bold text-white mb-2">Defense</h4><p class="text-sm text-gray-400" ng-bind="content.phase5_feat_2"></p></div>
+                        <div class="bg-white/5 p-6 rounded-xl border-l-4 border-rose-500"><h4 class="font-bold text-white mb-2">Future</h4><p class="text-sm text-gray-400" ng-bind="content.phase5_feat_3"></p></div>
                     </div>
                 </div>
             </div>
