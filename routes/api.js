@@ -3,23 +3,30 @@ var router = express.Router();
 
 const TRANSLATIONS = {
     vi: {
+        // HERO
         hero_subtitle: "Đào tạo Kỹ sư phần mềm chuẩn Quốc tế",
         hero_desc: "Chương trình tích hợp AI, OJT và cơ hội làm việc toàn cầu ngay từ giảng đường.",
+
+        // WHY FPT
         why_title: "Tại sao chọn SE <br>tại Đại học FPT?",
         why_1_title: "Chuẩn Quốc Tế",
-        why_1_desc: "Giáo trình 100% nhập khẩu (McGraw Hill). Tuân thủ chuẩn ACM & ABET. Đối tác: Oracle, Cisco.",
+        why_1_desc: "Giáo trình 100% nhập khẩu (McGraw Hill). Tuân thủ chuẩn ACM & ABET.",
         why_2_title: "Thực chiến (OJT)",
-        why_2_desc: "100% sinh viên thực tập 4-8 tháng. Làm dự án thật tại doanh nghiệp ngay từ năm 3.",
+        why_2_desc: "100% sinh viên thực tập 4-8 tháng tại doanh nghiệp.",
         why_3_title: "Công dân Toàn cầu",
-        why_3_desc: "Thành thạo 2 ngoại ngữ: Anh & Nhật/Trung. Sẵn sàng làm việc onsite quốc tế.",
+        why_3_desc: "Thành thạo 2 ngoại ngữ: Anh & Nhật/Trung. Sẵn sàng onsite.",
+
+        // MARKET
         market_title: "Thị trường & <br>Xu hướng 2025",
         market_stat_1: "Thiếu nhân sự IT",
         market_stat_2: "Châu Á Outsourcing",
         market_point_1: "Nhu cầu tuyển dụng tăng mạnh, đặc biệt nhân sự giỏi ngoại ngữ.",
         market_point_2: "Xu hướng dịch chuyển sang: AI, Cloud, Cyber Security.",
         market_opp_title: "Cơ hội vàng cho SV FPT",
-        market_opp_desc: "Với nền tảng ngoại ngữ và kinh nghiệm thực tế (BrSE), sinh viên FPT sở hữu lợi thế cạnh tranh vượt trội trên thị trường lao động quốc tế.",
-        method_title: "Phương pháp Đào tạo Khác biệt",
+        market_opp_desc: "Với nền tảng ngoại ngữ và kinh nghiệm thực tế (BrSE), sinh viên FPT sở hữu lợi thế cạnh tranh vượt trội.",
+
+        // METHODOLOGY
+        method_title: "Phương pháp Đào tạo",
         method_tech_title: "Công nghệ & AI",
         method_tech_1: "Phân tích yêu cầu.",
         method_tech_2: "Hỗ trợ lập trình.",
@@ -30,6 +37,8 @@ const TRANSLATIONS = {
         method_pbl_2: "Dự án thực tế: OCOP, Edutech.",
         method_pbl_3: "Rèn luyện kỹ năng Problem Solving.",
         method_pbl_4: "Service Learning: Phục vụ cộng đồng.",
+
+        // ROADMAP SUMMARY
         roadmap_title: "Lộ trình 9 Học kỳ",
         roadmap_1_title: "Chuẩn bị",
         roadmap_1_desc: "Tiếng Anh & Kỹ năng",
@@ -41,45 +50,87 @@ const TRANSLATIONS = {
         roadmap_4_desc: "Thực tập Doanh nghiệp",
         roadmap_5_title: "Về đích",
         roadmap_5_desc: "Capstone Project",
-        combo_title: "Combo Chuyên Sâu <br>(Kỳ 4-5)",
-        combo_1_desc: "Deep Learning, TensorFlow. Định hướng AI Engineer, Data Scientist.",
-        combo_2_desc: "Hệ thống nhúng, Smart Devices, Automotive Software.",
-        combo_3_desc: "CNTT + Tiếng Nhật nâng cao. Cầu nối thị trường Nhật Bản.",
-        combo_4_desc: "Hệ thống Enterprise lớn (Microsoft/Spring). Full-stack Dev.",
-        ojt_title: "OJT - Thực chiến",
-        ojt_subtitle: "On-the-Job Training: Điểm khác biệt.",
-        ojt_1: "4 - 8 tháng làm việc full-time.",
-        ojt_2: "Địa điểm: FPT Software, Nhật Bản, Malaysia...",
-        ojt_3: "Tham gia dự án thật (Real Projects).",
-        ojt_4: "Nhận lương & Cơ hội tuyển dụng.",
-        capstone_title: "Hoàn thiện Kỹ năng",
-        capstone_pm_desc: "Quản trị dự án chuyên nghiệp theo chuẩn Agile/Scrum.",
-        capstone_ent_desc: "Khởi nghiệp công nghệ, biến ý tưởng thành sản phẩm.",
-        capstone_main_desc: "Sinh viên làm việc theo nhóm để xây dựng một giải pháp phần mềm hoàn chỉnh từ A-Z giải quyết bài toán thực tế.",
-        capstone_quote: "Đây là tấm vé thông hành thuyết phục nhất đối với nhà tuyển dụng.",
-        curriculum_title: "Lộ trình học ví dụ",
+
+        // --- DETAILED JOURNEY (THEO TRÌNH TỰ THỜI GIAN) ---
+
+        prep_label: "Giai đoạn 0 (Pre-University)",
+        prep_title: "Tiếng Anh & Kỹ năng hội nhập",
+        prep_desc: "Trước khi học cách giao tiếp với máy tính, sinh viên FPT học cách giao tiếp với thế giới. Đây là bước đệm quan trọng để tự tin học tập bằng giáo trình quốc tế.",
+        prep_feat_1: "Little UK: Môi trường 100% tiếng Anh, 'sống' trong ngôn ngữ thay vì chỉ học ngữ pháp.",
+        prep_feat_2: "Kỹ năng mềm (Soft Skills): Làm việc nhóm, thuyết trình, tranh biện và quản lý cảm xúc.",
+        prep_feat_3: "Văn hóa & Thể chất: Rèn luyện Vovinam và Nhạc cụ dân tộc để cân bằng Thân - Tâm - Trí.",
+
+        // Phase 1: Preparation & Foundation
+        phase1_label: "Giai đoạn 1 (Kỳ 1-3)",
+        phase1_title: "Khởi động & Nền tảng",
+        phase1_desc: "Hành trình từ 'Zero' đến 'Hero'. Đây là giai đoạn rèn luyện kỷ luật quân đội, trau dồi ngoại ngữ và xây dựng tư duy lập trình cốt lõi.",
+        phase1_feat_1: "Văn hóa & Kỷ luật: Tháng rèn luyện tập trung (Quân sự) & Nhạc cụ dân tộc.",
+        phase1_feat_2: "Ngoại ngữ: Tiếng Anh dự bị (Little UK) & Tiếng Nhật sơ cấp.",
+        phase1_feat_3: "Tư duy cốt lõi: Nhập môn C, Java (OOP) & Cấu trúc dữ liệu giải thuật.",
+
+        // Phase 2: Specialization
+        phase2_label: "Giai đoạn 2 (Kỳ 4-5)",
+        phase2_title: "Chuyên sâu & Dự án",
+        phase2_desc: "Sinh viên chọn hướng đi chuyên ngành hẹp (Combo) và thực hiện dự án phần mềm hoàn chỉnh đầu tiên theo nhóm.",
+        phase2_feat_1: "Chọn Combo: AI, IoT, BridgeSE, .NET/Java...",
+        phase2_feat_2: "Dự án SWP391: Làm việc nhóm (Teamwork) theo quy trình Agile/Scrum.",
+        phase2_feat_3: "Quy trình phần mềm: Phân tích yêu cầu (SRS) & Kiểm thử (Testing).",
+
+        // Phase 3: OJT
+        phase3_label: "Giai đoạn 3 (Kỳ 6)",
+        phase3_title: "OJT - Học kỳ Doanh nghiệp",
+        phase3_desc: "Rời ghế nhà trường, sinh viên trở thành nhân viên thực tập full-time. Làm việc trong dự án thật với áp lực thật.",
+        phase3_feat_1: "Thời gian: 4-8 tháng làm việc tại FPT Software hoặc đối tác.",
+        phase3_feat_2: "Trải nghiệm: Tham gia dự án thực tế (Real Projects).",
+        phase3_feat_3: "Cơ hội: Nhận lương/trợ cấp và cơ hội ký hợp đồng chính thức.",
+
+        // Phase 4: Advanced
+        phase4_label: "Giai đoạn 4 (Kỳ 7-8)",
+        phase4_title: "Nâng cao & Khởi nghiệp",
+        phase4_desc: "Trở về từ doanh nghiệp với kinh nghiệm thực tế, sinh viên học các công nghệ tiên tiến và tư duy làm chủ sản phẩm.",
+        phase4_feat_1: "Công nghệ mới: Lập trình đa nền tảng (Flutter/React Native), Architecture.",
+        phase4_feat_2: "Khởi nghiệp: Môn học Entrepreneurship giúp biến ý tưởng thành Startup.",
+        phase4_feat_3: "Quản trị: Kỹ năng quản lý dự án (Project Management).",
+
+        // Phase 5: Capstone
+        phase5_label: "Giai đoạn 5 (Kỳ 9)",
+        phase5_title: "Capstone Project",
+        phase5_desc: "Thử thách cuối cùng. Sinh viên bảo vệ đồ án tốt nghiệp - một sản phẩm phần mềm hoàn chỉnh có tính ứng dụng cao.",
+        phase5_feat_1: "Sản phẩm: Giải quyết bài toán thực tế của xã hội/doanh nghiệp.",
+        phase5_feat_2: "Hội đồng: Bảo vệ trước các chuyên gia và nhà tuyển dụng.",
+        phase5_feat_3: "Tương lai: Tấm vé thông hành bước ra thị trường lao động toàn cầu.",
+
+        // TABLES & CLOSING
+        curriculum_title: "Lộ trình học chi tiết",
         curriculum_col_name: "Tên Môn Học",
         curriculum_col_term: "Kỳ",
         closing_title: "Sẵn sàng trở thành Kỹ sư phần mềm toàn cầu cùng Đại học FPT."
     },
     en: {
+        // HERO
         hero_subtitle: "International Standard Software Engineering Training",
         hero_desc: "Integrated AI program, OJT and global working opportunities right from university.",
+
+        // WHY FPT
         why_title: "Why choose SE <br>at FPT University?",
         why_1_title: "International Standard",
-        why_1_desc: "100% imported textbooks (McGraw Hill). ACM & ABET compliant. Partners: Oracle, Cisco.",
+        why_1_desc: "100% imported textbooks (McGraw Hill). ACM & ABET compliant.",
         why_2_title: "On-the-Job Training",
-        why_2_desc: "100% students intern for 4-8 months. Work on real projects at enterprises from year 3.",
+        why_2_desc: "100% students intern for 4-8 months at enterprises.",
         why_3_title: "Global Citizen",
-        why_3_desc: "Proficient in 2 foreign languages: English & Japanese/Chinese. Ready for onsite international work.",
+        why_3_desc: "Proficient in 2 foreign languages: English & Japanese/Chinese. Ready for onsite.",
+
+        // MARKET
         market_title: "Market & <br>Trends 2025",
         market_stat_1: "IT Personnel Shortage",
         market_stat_2: "Asia Outsourcing",
         market_point_1: "Strong recruitment demand, especially for those proficient in foreign languages.",
         market_point_2: "Trend shift towards: AI, Cloud, Cyber Security.",
         market_opp_title: "Golden Opportunity for FPT Students",
-        market_opp_desc: "With foreign language foundation and practical experience (BrSE), FPT students have superior competitive advantages in the global labor market.",
-        method_title: "Distinctive Training Methodology",
+        market_opp_desc: "With foreign language foundation and practical experience (BrSE), FPT students have superior competitive advantages.",
+
+        // METHODOLOGY
+        method_title: "Distinctive Methodology",
         method_tech_title: "Technology & AI",
         method_tech_1: "Requirement Analysis.",
         method_tech_2: "Coding Support.",
@@ -90,6 +141,8 @@ const TRANSLATIONS = {
         method_pbl_2: "Real projects: OCOP, Edutech.",
         method_pbl_3: "Train Problem Solving skills.",
         method_pbl_4: "Service Learning: Community Service.",
+
+        // ROADMAP SUMMARY
         roadmap_title: "9-Term Roadmap",
         roadmap_1_title: "Preparation",
         roadmap_1_desc: "English & Soft Skills",
@@ -101,22 +154,57 @@ const TRANSLATIONS = {
         roadmap_4_desc: "Enterprise Internship",
         roadmap_5_title: "Graduation",
         roadmap_5_desc: "Capstone Project",
-        combo_title: "Specialized Combos <br>(Term 4-5)",
-        combo_1_desc: "Deep Learning, TensorFlow. Aiming for AI Engineer, Data Scientist.",
-        combo_2_desc: "Embedded systems, Smart Devices, Automotive Software.",
-        combo_3_desc: "IT + Advanced Japanese. Bridge to Japanese market.",
-        combo_4_desc: "Large Enterprise Systems (Microsoft/Spring). Full-stack Dev.",
-        ojt_title: "OJT - Real Combat",
-        ojt_subtitle: "On-the-Job Training: The Difference.",
-        ojt_1: "4 - 8 months working full-time.",
-        ojt_2: "Location: FPT Software, Japan, Malaysia...",
-        ojt_3: "Join Real Projects.",
-        ojt_4: "Receive salary & Recruitment opportunities.",
-        capstone_title: "Skill Perfection",
-        capstone_pm_desc: "Professional project management (Agile/Scrum).",
-        capstone_ent_desc: "Tech entrepreneurship, turning ideas into products.",
-        capstone_main_desc: "Students work in teams to build a complete software solution from A-Z solving real-world problems.",
-        capstone_quote: "This is the most convincing pass for employers.",
+
+        // --- DETAILED JOURNEY ---
+
+        prep_label: "Phase 0 (Pre-University)",
+        prep_title: "English & Integration Skills",
+        prep_desc: "Before learning to communicate with computers, FPT students learn to communicate with the world. This is a crucial stepping stone to study with international curricula.",
+        prep_feat_1: "Little UK: 100% English environment, 'living' the language instead of just learning grammar.",
+        prep_feat_2: "Soft Skills: Teamwork, presentation, debate, and emotional intelligence.",
+        prep_feat_3: "Culture & Fitness: Vovinam and Traditional Instruments to balance Body - Mind - Spirit.",
+
+        // Phase 1
+        phase1_label: "Phase 1 (Term 1-3)",
+        phase1_title: "Kickstart & Foundation",
+        phase1_desc: "From 'Zero' to 'Hero'. A journey of military discipline, language mastery, and building core programming mindset.",
+        phase1_feat_1: "Culture & Discipline: Military Month & Traditional Instruments.",
+        phase1_feat_2: "Languages: Preparatory English (Little UK) & Elementary Japanese.",
+        phase1_feat_3: "Core Mindset: Intro to C, Java (OOP) & Data Structures Algorithms.",
+
+        // Phase 2
+        phase2_label: "Phase 2 (Term 4-5)",
+        phase2_title: "Specialization & Project",
+        phase2_desc: "Students select a specialized career path (Combo) and execute their first complete team software project.",
+        phase2_feat_1: "Select Combo: AI, IoT, BridgeSE, .NET/Java...",
+        phase2_feat_2: "SWP391 Project: Teamwork using Agile/Scrum methodology.",
+        phase2_feat_3: "Software Process: Requirements (SRS) & Testing.",
+
+        // Phase 3
+        phase3_label: "Phase 3 (Term 6)",
+        phase3_title: "OJT - On the Job Training",
+        phase3_desc: "Leaving the classroom to become full-time interns. Working on real projects with real pressure.",
+        phase3_feat_1: "Duration: 4-8 months at FPT Software or partners.",
+        phase3_feat_2: "Experience: Joining Real Projects.",
+        phase3_feat_3: "Opportunity: Salary/Allowance and official recruitment offers.",
+
+        // Phase 4
+        phase4_label: "Phase 4 (Term 7-8)",
+        phase4_title: "Advanced & Startup",
+        phase4_desc: "Returning with experience, students master advanced tech and equip themselves with a product ownership mindset.",
+        phase4_feat_1: "Advanced Tech: Cross-platform (Flutter), Architecture.",
+        phase4_feat_2: "Entrepreneurship: Turning ideas into Startups.",
+        phase4_feat_3: "Management: Project Management skills.",
+
+        // Phase 5
+        phase5_label: "Phase 5 (Term 9)",
+        phase5_title: "Capstone Project",
+        phase5_desc: "The final challenge. Defending a graduation project - a complete, applicable software product.",
+        phase5_feat_1: "Product: Solving real-world problems for society/business.",
+        phase5_feat_2: "Defense: Presenting before a council of experts.",
+        phase5_feat_3: "Future: The passport to the global labor market.",
+
+        // TABLES & CLOSING
         curriculum_title: "Sample Learning Roadmap",
         curriculum_col_name: "Subject Name",
         curriculum_col_term: "Term",

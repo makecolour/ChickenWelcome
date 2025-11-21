@@ -9,44 +9,26 @@
 </head>
 <body class="bg-dark text-gray-200 overflow-x-hidden font-sans leading-relaxed" ng-controller="MainController">
 
-<!-- 3. LANGUAGE SWITCHER -->
+<!-- LANGUAGE SWITCHER -->
 <div class="fixed top-6 right-8 z-[60] flex items-center gap-2 bg-card border border-gray-700 rounded-full p-1 shadow-lg" ng-cloak>
-    <button ng-click="setLang('vi')"
-            class="px-4 py-1.5 rounded-full text-sm font-bold transition-all duration-300"
-            ng-class="{'bg-accentGreen text-black': currentLang === 'vi', 'text-gray-400 hover:text-white': currentLang !== 'vi'}">
-        VN
-    </button>
-    <button ng-click="setLang('en')"
-            class="px-4 py-1.5 rounded-full text-sm font-bold transition-all duration-300"
-            ng-class="{'bg-accentBlue text-black': currentLang === 'en', 'text-gray-400 hover:text-white': currentLang !== 'en'}">
-        EN
-    </button>
+    <button ng-click="setLang('vi')" class="px-4 py-1.5 rounded-full text-sm font-bold transition-all duration-300" ng-class="{'bg-accentGreen text-black': currentLang === 'vi', 'text-gray-400 hover:text-white': currentLang !== 'vi'}">VN</button>
+    <button ng-click="setLang('en')" class="px-4 py-1.5 rounded-full text-sm font-bold transition-all duration-300" ng-class="{'bg-accentBlue text-black': currentLang === 'en', 'text-gray-400 hover:text-white': currentLang !== 'en'}">EN</button>
 </div>
 
-<!-- 4. NAVIGATION -->
+<!-- NAVIGATION -->
 <nav class="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-4" ng-cloak>
-    <a ng-repeat="sec in sections"
-       href="javascript:void(0)"
-       ng-click="scrollTo(sec.id)"
-       class="nav-dot w-3 h-3 rounded-full bg-gray-600 hover:bg-accentGreen cursor-pointer block"
-       ng-class="{ 'active': activeSection === sec.id }"
-       title="{{ sec.name }}">
-    </a>
+    <a ng-repeat="sec in sections" href="javascript:void(0)" ng-click="scrollTo(sec.id)" class="nav-dot w-3 h-3 rounded-full bg-gray-600 hover:bg-accentGreen cursor-pointer block" ng-class="{ 'active': activeSection === sec.id }" title="{{ sec.name }}"></a>
 </nav>
 
-<!-- 5. MAIN CONTENT (Wrapped in ID for AnimeJS targeting) -->
+<!-- MAIN CONTENT -->
 <main id="main-content">
 
     <!-- SECTION 1: HERO -->
     <section id="sec-1" class="min-h-screen flex items-center justify-center relative glow-bg-green py-24" scroll-observer>
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div class="z-10">
-                <div class="anim-el inline-block px-4 py-2 rounded-full bg-green-900/30 text-accentGreen font-bold text-sm mb-6 border border-accentGreen/20 shadow-[0_0_15px_rgba(0,255,157,0.1)]">
-                    FPT UNIVERSITY
-                </div>
-                <h1 class="anim-el text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] mb-8 text-white tracking-tight">
-                    SOFTWARE <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-accentGreen to-accentBlue">ENGINEERING</span>
-                </h1>
+                <div class="anim-el inline-block px-4 py-2 rounded-full bg-green-900/30 text-accentGreen font-bold text-sm mb-6 border border-accentGreen/20">FPT UNIVERSITY</div>
+                <h1 class="anim-el text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] mb-8 text-white tracking-tight">SOFTWARE <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-accentGreen to-accentBlue">ENGINEERING</span></h1>
                 <p class="anim-el text-2xl md:text-3xl text-white mt-4 font-medium" ng-bind="content.hero_subtitle"></p>
                 <p class="anim-el text-muted mt-6 text-lg md:text-xl max-w-lg leading-relaxed" ng-bind="content.hero_desc"></p>
             </div>
@@ -62,24 +44,18 @@
         <div class="container mx-auto px-6">
             <h2 class="anim-el text-4xl md:text-5xl font-bold mb-20 pl-6 border-l-8 border-accentGreen text-white leading-tight" ng-bind-html="content.why_title"></h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-                <div class="anim-el bg-card p-8 lg:p-10 rounded-3xl border border-gray-800 hover:border-accentGreen transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,255,157,0.05)]">
-                    <div class="w-16 h-16 rounded-2xl bg-accentGreen/10 text-accentGreen flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-certificate"></i>
-                    </div>
+                <div class="anim-el bg-card p-8 rounded-3xl border border-gray-800 hover:border-accentGreen transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-2xl bg-accentGreen/10 text-accentGreen flex items-center justify-center text-3xl mb-8"><i class="fa-solid fa-certificate"></i></div>
                     <h3 class="text-2xl font-bold text-white mb-4" ng-bind="content.why_1_title"></h3>
                     <p class="text-muted leading-relaxed" ng-bind="content.why_1_desc"></p>
                 </div>
-                <div class="anim-el bg-card p-8 lg:p-10 rounded-3xl border border-gray-800 hover:border-accentGreen transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,255,157,0.05)]">
-                    <div class="w-16 h-16 rounded-2xl bg-accentGreen/10 text-accentGreen flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-briefcase"></i>
-                    </div>
+                <div class="anim-el bg-card p-8 rounded-3xl border border-gray-800 hover:border-accentGreen transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-2xl bg-accentGreen/10 text-accentGreen flex items-center justify-center text-3xl mb-8"><i class="fa-solid fa-briefcase"></i></div>
                     <h3 class="text-2xl font-bold text-white mb-4" ng-bind="content.why_2_title"></h3>
                     <p class="text-muted leading-relaxed" ng-bind="content.why_2_desc"></p>
                 </div>
-                <div class="anim-el bg-card p-8 lg:p-10 rounded-3xl border border-gray-800 hover:border-accentGreen transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,255,157,0.05)]">
-                    <div class="w-16 h-16 rounded-2xl bg-accentGreen/10 text-accentGreen flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-earth-asia"></i>
-                    </div>
+                <div class="anim-el bg-card p-8 rounded-3xl border border-gray-800 hover:border-accentGreen transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-2xl bg-accentGreen/10 text-accentGreen flex items-center justify-center text-3xl mb-8"><i class="fa-solid fa-earth-asia"></i></div>
                     <h3 class="text-2xl font-bold text-white mb-4" ng-bind="content.why_3_title"></h3>
                     <p class="text-muted leading-relaxed" ng-bind="content.why_3_desc"></p>
                 </div>
@@ -103,20 +79,12 @@
                     </div>
                 </div>
                 <ul class="space-y-6">
-                    <li class="anim-el flex items-start gap-4 text-xl text-gray-300">
-                        <div class="mt-1 w-6 h-6 rounded-full bg-accentGreen/20 flex items-center justify-center text-accentGreen text-sm flex-shrink-0"><i class="fa-solid fa-check"></i></div>
-                        <span ng-bind="content.market_point_1"></span>
-                    </li>
-                    <li class="anim-el flex items-start gap-4 text-xl text-gray-300">
-                        <div class="mt-1 w-6 h-6 rounded-full bg-accentGreen/20 flex items-center justify-center text-accentGreen text-sm flex-shrink-0"><i class="fa-solid fa-check"></i></div>
-                        <span ng-bind="content.market_point_2"></span>
-                    </li>
+                    <li class="anim-el flex items-start gap-4 text-xl text-gray-300"><i class="fa-solid fa-check text-accentGreen mt-1"></i> <span ng-bind="content.market_point_1"></span></li>
+                    <li class="anim-el flex items-start gap-4 text-xl text-gray-300"><i class="fa-solid fa-check text-accentGreen mt-1"></i> <span ng-bind="content.market_point_2"></span></li>
                 </ul>
             </div>
             <div class="anim-el bg-card/80 backdrop-blur-sm border border-accentBlue/30 p-10 rounded-3xl shadow-[0_0_50px_rgba(0,184,255,0.1)]">
-                <div class="w-16 h-16 rounded-2xl bg-accentBlue/20 text-accentBlue flex items-center justify-center text-3xl mb-8">
-                    <i class="fa-solid fa-arrow-trend-up"></i>
-                </div>
+                <div class="w-16 h-16 rounded-2xl bg-accentBlue/20 text-accentBlue flex items-center justify-center text-3xl mb-8"><i class="fa-solid fa-arrow-trend-up"></i></div>
                 <h3 class="text-3xl font-bold text-white mb-6" ng-bind="content.market_opp_title"></h3>
                 <p class="text-muted text-lg leading-relaxed" ng-bind="content.market_opp_desc"></p>
             </div>
@@ -128,28 +96,20 @@
         <div class="container mx-auto px-6">
             <h2 class="anim-el text-center text-4xl md:text-5xl font-bold mb-20 text-white" ng-bind="content.method_title"></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
-                <div class="anim-el bg-card p-10 lg:p-12 rounded-3xl border border-gray-800 hover:border-accentGreen transition-all duration-300 group">
-                    <h3 class="text-3xl font-bold text-white mb-8 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-accentGreen/10 flex items-center justify-center"><i class="fa-solid fa-robot text-accentGreen text-2xl"></i></div>
-                        <span ng-bind="content.method_tech_title"></span>
-                    </h3>
+                <div class="anim-el bg-card p-10 rounded-3xl border border-gray-800 hover:border-accentGreen transition-all duration-300">
+                    <h3 class="text-3xl font-bold text-white mb-8 flex items-center gap-4"><i class="fa-solid fa-robot text-accentGreen text-2xl"></i> <span ng-bind="content.method_tech_title"></span></h3>
                     <ul class="space-y-5 text-lg text-muted">
-                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentGreen rounded-full flex-shrink-0"></span> <span><strong>ChatGPT:</strong> <span ng-bind="content.method_tech_1"></span></span></li>
-                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentGreen rounded-full flex-shrink-0"></span> <span><strong>GitHub Copilot:</strong> <span ng-bind="content.method_tech_2"></span></span></li>
-                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentGreen rounded-full flex-shrink-0"></span> <span><strong>Figma AI:</strong> <span ng-bind="content.method_tech_3"></span></span></li>
-                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentGreen rounded-full flex-shrink-0"></span> <span><strong>DevOps:</strong> <span ng-bind="content.method_tech_4"></span></span></li>
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentGreen rounded-full"></span> <strong>ChatGPT:</strong> <span ng-bind="content.method_tech_1"></span></li>
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentGreen rounded-full"></span> <strong>GitHub Copilot:</strong> <span ng-bind="content.method_tech_2"></span></li>
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentGreen rounded-full"></span> <strong>Figma AI:</strong> <span ng-bind="content.method_tech_3"></span></li>
                     </ul>
                 </div>
-                <div class="anim-el bg-card p-10 lg:p-12 rounded-3xl border border-gray-800 hover:border-accentBlue transition-all duration-300 group">
-                    <h3 class="text-3xl font-bold text-white mb-8 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center"><i class="fa-solid fa-diagram-project text-accentBlue text-2xl"></i></div>
-                        <span ng-bind="content.method_pbl_title"></span>
-                    </h3>
+                <div class="anim-el bg-card p-10 rounded-3xl border border-gray-800 hover:border-accentBlue transition-all duration-300">
+                    <h3 class="text-3xl font-bold text-white mb-8 flex items-center gap-4"><i class="fa-solid fa-diagram-project text-accentBlue text-2xl"></i> <span ng-bind="content.method_pbl_title"></span></h3>
                     <ul class="space-y-5 text-lg text-muted">
-                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentBlue rounded-full flex-shrink-0"></span> <span ng-bind="content.method_pbl_1"></span></li>
-                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentBlue rounded-full flex-shrink-0"></span> <span ng-bind="content.method_pbl_2"></span></li>
-                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentBlue rounded-full flex-shrink-0"></span> <span ng-bind="content.method_pbl_3"></span></li>
-                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentBlue rounded-full flex-shrink-0"></span> <span ng-bind="content.method_pbl_4"></span></li>
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentBlue rounded-full"></span> <span ng-bind="content.method_pbl_1"></span></li>
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentBlue rounded-full"></span> <span ng-bind="content.method_pbl_2"></span></li>
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accentBlue rounded-full"></span> <span ng-bind="content.method_pbl_3"></span></li>
                     </ul>
                 </div>
             </div>
@@ -199,110 +159,212 @@
         </div>
     </section>
 
-    <!-- SECTION 6: COMBO SPECIALIZATION -->
-    <section id="sec-6" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
-        <div class="container mx-auto px-6">
-            <h2 class="anim-el text-4xl md:text-5xl font-bold mb-16 pl-6 border-l-8 border-accentBlue text-white leading-tight" ng-bind-html="content.combo_title"></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="anim-el bg-card p-8 rounded-2xl border border-t-4 border-accentGreen hover:bg-gray-900 transition-all duration-300 hover:-translate-y-2">
-                    <div class="flex items-center gap-4 mb-6">
-                        <i class="fa-solid fa-brain text-accentGreen text-3xl"></i>
-                        <h3 class="text-xl font-bold text-white">AI & Data</h3>
+    <section id="sec-prep" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
+        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Left: Image (Grid layout for diversity) -->
+            <div class="order-1 anim-el grid grid-cols-2 gap-4 relative">
+                <!-- Decorative background blob -->
+                <div class="absolute inset-0 bg-yellow-500/10 blur-3xl -z-10 transform scale-110"></div>
+
+                <div class="space-y-4 mt-8">
+                    <img src="/images/LUK.jpg" class="rounded-2xl shadow-lg w-full h-48 object-cover hover:scale-105 transition-transform duration-500 border border-gray-800" alt="English Class">
+                    <div class="bg-card border border-gray-700 p-6 rounded-2xl flex flex-col justify-center items-center text-center h-48">
+                        <i class="fa-solid fa-earth-americas text-4xl text-yellow-500 mb-3"></i>
+                        <span class="font-bold text-white">Global Ready</span>
                     </div>
-                    <p class="text-muted text-sm leading-relaxed" ng-bind="content.combo_1_desc"></p>
                 </div>
-                <div class="anim-el bg-card p-8 rounded-2xl border border-t-4 border-accentBlue hover:bg-gray-900 transition-all duration-300 hover:-translate-y-2">
-                    <div class="flex items-center gap-4 mb-6">
-                        <i class="fa-solid fa-microchip text-accentBlue text-3xl"></i>
-                        <h3 class="text-xl font-bold text-white">IoT & Embedded</h3>
+                <div class="space-y-4">
+                    <div class="bg-card border border-gray-700 p-6 rounded-2xl flex flex-col justify-center items-center text-center h-48">
+                        <i class="fa-solid fa-comments text-4xl text-yellow-500 mb-3"></i>
+                        <span class="font-bold text-white">Confidence</span>
                     </div>
-                    <p class="text-muted text-sm leading-relaxed" ng-bind="content.combo_2_desc"></p>
+                    <img src="/images/nhaccu.jpg" class="rounded-2xl shadow-lg w-full h-64 object-cover hover:scale-105 transition-transform duration-500 border border-gray-800" alt="Soft Skills">
                 </div>
-                <div class="anim-el bg-card p-8 rounded-2xl border border-t-4 border-white hover:bg-gray-900 transition-all duration-300 hover:-translate-y-2">
-                    <div class="flex items-center gap-4 mb-6">
-                        <i class="fa-solid fa-bridge text-white text-3xl"></i>
-                        <h3 class="text-xl font-bold text-white">Bridge SE</h3>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="order-2">
+                <div class="anim-el inline-block px-4 py-2 rounded-lg border border-yellow-500 text-yellow-500 text-xs font-bold mb-6 tracking-[0.2em] uppercase" ng-bind="content.prep_label"></div>
+                <h2 class="anim-el text-4xl md:text-5xl font-bold mb-6 text-white" ng-bind="content.prep_title"></h2>
+                <p class="anim-el text-muted text-lg mb-8" ng-bind="content.prep_desc"></p>
+
+                <ul class="space-y-6">
+                    <!-- Feature 1: English -->
+                    <div class="anim-el flex gap-5 group">
+                        <div class="w-14 h-14 rounded-full bg-yellow-500/10 text-yellow-500 flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300">
+                            <i class="fa-solid fa-comment-dots"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-300 leading-relaxed" ng-bind="content.prep_feat_1"></p>
+                        </div>
                     </div>
-                    <p class="text-muted text-sm leading-relaxed" ng-bind="content.combo_3_desc"></p>
-                </div>
-                <div class="anim-el bg-card p-8 rounded-2xl border border-t-4 border-purple-500 hover:bg-gray-900 transition-all duration-300 hover:-translate-y-2">
-                    <div class="flex items-center gap-4 mb-6">
-                        <i class="fa-brands fa-windows text-purple-500 text-3xl"></i>
-                        <h3 class="text-xl font-bold text-white">.NET / Java</h3>
+
+                    <!-- Feature 2: Soft Skills -->
+                    <div class="anim-el flex gap-5 group">
+                        <div class="w-14 h-14 rounded-full bg-yellow-500/10 text-yellow-500 flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-300 leading-relaxed" ng-bind="content.prep_feat_2"></p>
+                        </div>
                     </div>
-                    <p class="text-muted text-sm leading-relaxed" ng-bind="content.combo_4_desc"></p>
-                </div>
+
+                    <!-- Feature 3: Culture -->
+                    <div class="anim-el flex gap-5 group">
+                        <div class="w-14 h-14 rounded-full bg-yellow-500/10 text-yellow-500 flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300">
+                            <i class="fa-solid fa-guitar"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-300 leading-relaxed" ng-bind="content.prep_feat_3"></p>
+                        </div>
+                    </div>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 7: OJT -->
-    <section id="sec-7" class="min-h-screen flex items-center justify-center relative glow-bg-blue py-24" scroll-observer>
+    <!-- PHASE 1: PREP & FOUNDATION -->
+    <section id="sec-phase1" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="anim-el h-[400px] lg:h-[500px] rounded-3xl overflow-hidden border border-gray-800 shadow-2xl relative group">
-                <div class="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent z-10"></div>
-                <img src="/images/FPTSW2650.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="FPT Software Office">
+            <div class="order-2 lg:order-1">
+                <div class="anim-el inline-block px-4 py-2 rounded-lg border border-gray-600 text-gray-400 text-xs font-bold mb-6 tracking-[0.2em] uppercase" ng-bind="content.phase1_label"></div>
+                <h2 class="anim-el text-4xl md:text-5xl font-bold mb-6 text-white" ng-bind="content.phase1_title"></h2>
+                <p class="anim-el text-muted text-lg mb-8" ng-bind="content.phase1_desc"></p>
+                <ul class="space-y-4">
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-accentGreen transition-colors duration-300">
+                        <i class="fa-solid fa-person-military-pointing text-accentGreen text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase1_feat_1"></span>
+                    </li>
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-accentGreen transition-colors duration-300">
+                        <i class="fa-solid fa-language text-accentGreen text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase1_feat_2"></span>
+                    </li>
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-accentGreen transition-colors duration-300">
+                        <i class="fa-solid fa-code text-accentGreen text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase1_feat_3"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="order-1 lg:order-2 anim-el h-[400px] rounded-3xl overflow-hidden border border-gray-800 relative group">
+                <div class="absolute inset-0 bg-accentGreen/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/images/ftalent.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Phase 1">
+            </div>
+        </div>
+    </section>
+
+    <!-- PHASE 2: SPECIALIZATION (UPDATED: Granular Animation) -->
+    <section id="sec-phase2" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
+        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="anim-el h-[400px] rounded-3xl overflow-hidden border border-gray-800 relative group">
+                <div class="absolute inset-0 bg-accentBlue/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/images/project.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Phase 2">
             </div>
             <div>
-                <div class="anim-el inline-block px-4 py-2 rounded-lg border border-accentBlue/50 bg-accentBlue/10 text-accentBlue text-xs font-bold mb-6 tracking-[0.2em] uppercase">Học kỳ 6</div>
-                <h2 class="anim-el text-4xl md:text-6xl font-bold mb-8 text-white" ng-bind="content.ojt_title"></h2>
-                <p class="anim-el text-2xl text-white font-medium mb-8" ng-bind="content.ojt_subtitle"></p>
-                <ul class="space-y-5">
-                    <li class="anim-el flex items-center gap-4 text-lg text-muted">
-                        <div class="w-8 h-8 rounded-full bg-accentBlue/20 flex items-center justify-center text-accentBlue text-sm"><i class="fa-solid fa-check"></i></div>
-                        <span ng-bind="content.ojt_1"></span>
+                <div class="anim-el inline-block px-4 py-2 rounded-lg border border-accentBlue text-accentBlue text-xs font-bold mb-6 tracking-[0.2em] uppercase" ng-bind="content.phase2_label"></div>
+                <h2 class="anim-el text-4xl md:text-5xl font-bold mb-6 text-white" ng-bind="content.phase2_title"></h2>
+                <p class="anim-el text-muted text-lg mb-8" ng-bind="content.phase2_desc"></p>
+                <ul class="space-y-4">
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-accentBlue transition-colors duration-300">
+                        <i class="fa-solid fa-sitemap text-accentBlue text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase2_feat_1"></span>
                     </li>
-                    <li class="anim-el flex items-center gap-4 text-lg text-muted">
-                        <div class="w-8 h-8 rounded-full bg-accentBlue/20 flex items-center justify-center text-accentBlue text-sm"><i class="fa-solid fa-check"></i></div>
-                        <span ng-bind="content.ojt_2"></span>
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-accentBlue transition-colors duration-300">
+                        <i class="fa-solid fa-users-gear text-accentBlue text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase2_feat_2"></span>
                     </li>
-                    <li class="anim-el flex items-center gap-4 text-lg text-muted">
-                        <div class="w-8 h-8 rounded-full bg-accentBlue/20 flex items-center justify-center text-accentBlue text-sm"><i class="fa-solid fa-check"></i></div>
-                        <span ng-bind="content.ojt_3"></span>
-                    </li>
-                    <li class="anim-el flex items-center gap-4 text-lg text-muted">
-                        <div class="w-8 h-8 rounded-full bg-accentBlue/20 flex items-center justify-center text-accentBlue text-sm"><i class="fa-solid fa-check"></i></div>
-                        <span ng-bind="content.ojt_4"></span>
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-accentBlue transition-colors duration-300">
+                        <i class="fa-solid fa-list-check text-accentBlue text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase2_feat_3"></span>
                     </li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 8: CAPSTONE -->
-    <section id="sec-8" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
-        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-            <div class="anim-el flex flex-col justify-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-12" ng-bind="content.capstone_title"></h2>
-                <ul class="space-y-8">
-                    <li class="bg-card p-8 rounded-2xl border border-gray-800 flex items-start gap-6 hover:border-accentGreen transition-colors group">
-                        <div class="w-12 h-12 rounded-xl bg-accentGreen/10 flex items-center justify-center text-accentGreen text-2xl mt-1 flex-shrink-0 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-list-check"></i>
+    <!-- PHASE 3: OJT (Granular Applied for consistency) -->
+    <section id="sec-phase3" class="min-h-screen flex items-center justify-center relative glow-bg-blue py-24" scroll-observer>
+        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Left: Content -->
+            <div class="order-2 lg:order-1">
+                <div class="anim-el inline-block px-4 py-2 rounded-lg bg-accentBlue text-black text-xs font-bold mb-6 tracking-[0.2em] uppercase" ng-bind="content.phase3_label"></div>
+                <h2 class="anim-el text-5xl md:text-6xl font-black mb-8 text-white" ng-bind="content.phase3_title"></h2>
+                <p class="anim-el text-xl text-gray-300 mb-10 leading-relaxed" ng-bind="content.phase3_desc"></p>
+
+                <!-- Feature List (Stacked Vertically) -->
+                <div class="space-y-4">
+                    <!-- Item 1 -->
+                    <div class="anim-el bg-card p-5 rounded-xl border border-gray-700 flex items-center gap-5 hover:border-accentBlue transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-full bg-accentBlue/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-building text-2xl text-accentBlue group-hover:scale-110 transition-transform"></i>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-white text-xl mb-2">Project Management</h4>
-                            <p class="text-base text-muted" ng-bind="content.capstone_pm_desc"></p>
+                        <h3 class="text-lg font-bold text-white" ng-bind="content.phase3_feat_1"></h3>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="anim-el bg-card p-5 rounded-xl border border-gray-700 flex items-center gap-5 hover:border-accentBlue transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-full bg-accentBlue/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-handshake text-2xl text-accentBlue group-hover:scale-110 transition-transform"></i>
                         </div>
+                        <h3 class="text-lg font-bold text-white" ng-bind="content.phase3_feat_2"></h3>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="anim-el bg-card p-5 rounded-xl border border-gray-700 flex items-center gap-5 hover:border-accentBlue transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-full bg-accentBlue/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-id-card text-2xl text-accentBlue group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white" ng-bind="content.phase3_feat_3"></h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Image (NEW) -->
+            <div class="order-1 lg:order-2 anim-el h-[500px] lg:h-[600px] rounded-3xl overflow-hidden border border-gray-800 relative group shadow-2xl">
+                <div class="absolute inset-0 bg-accentBlue/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <!-- Thay đường dẫn ảnh dưới đây bằng ảnh văn phòng làm việc thực tế của FPT Software nếu có -->
+                <img src="/images/FPTSW2650.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="OJT Environment">
+
+                <!-- Floating Badge overlay on Image -->
+                <div class="absolute bottom-8 left-8 bg-dark/80 backdrop-blur-md border border-accentBlue px-6 py-4 rounded-2xl z-20">
+                    <div class="text-accentBlue font-bold text-2xl">100%</div>
+                    <div class="text-xs text-gray-300 uppercase tracking-wider">Sinh viên làm việc thật</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHASE 4: ADVANCED (UPDATED: Granular Animation for "Nâng cao & Khởi nghiệp") -->
+    <section id="sec-phase4" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
+        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1">
+                <div class="anim-el inline-block px-4 py-2 rounded-lg border border-purple-500 text-purple-400 text-xs font-bold mb-6 tracking-[0.2em] uppercase" ng-bind="content.phase4_label"></div>
+                <h2 class="anim-el text-4xl md:text-5xl font-bold mb-6 text-white" ng-bind="content.phase4_title"></h2>
+                <p class="anim-el text-muted text-lg mb-8" ng-bind="content.phase4_desc"></p>
+                <ul class="space-y-4">
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-purple-500 transition-colors duration-300">
+                        <i class="fa-solid fa-mobile-screen text-purple-500 text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase4_feat_1"></span>
                     </li>
-                    <li class="bg-card p-8 rounded-2xl border border-gray-800 flex items-start gap-6 hover:border-accentGreen transition-colors group">
-                        <div class="w-12 h-12 rounded-xl bg-accentGreen/10 flex items-center justify-center text-accentGreen text-2xl mt-1 flex-shrink-0 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-rocket"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-xl mb-2">Entrepreneurship</h4>
-                            <p class="text-base text-muted" ng-bind="content.capstone_ent_desc"></p>
-                        </div>
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-purple-500 transition-colors duration-300">
+                        <i class="fa-solid fa-rocket text-purple-500 text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase4_feat_2"></span>
+                    </li>
+                    <li class="anim-el flex items-center gap-4 bg-card p-4 rounded-xl border border-gray-800 hover:border-purple-500 transition-colors duration-300">
+                        <i class="fa-solid fa-briefcase text-purple-500 text-2xl"></i> <span class="font-bold text-white" ng-bind="content.phase4_feat_3"></span>
                     </li>
                 </ul>
             </div>
-            <div class="anim-el bg-gradient-to-br from-gray-900 to-black p-12 rounded-[2.5rem] border border-accentGreen/30 flex flex-col justify-center shadow-[0_0_60px_rgba(0,255,157,0.08)] relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-accentGreen/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-                <div class="relative z-10">
+            <div class="order-1 lg:order-2 anim-el h-[400px] rounded-3xl overflow-hidden border border-gray-800 relative group">
+                <div class="absolute inset-0 bg-purple-900/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/images/positive.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Phase 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- PHASE 5: CAPSTONE -->
+    <section id="sec-phase5" class="min-h-screen flex items-center justify-center relative py-24" scroll-observer>
+        <div class="container mx-auto px-6">
+            <div class="anim-el bg-gradient-to-br from-gray-900 to-black p-12 lg:p-20 rounded-[3rem] border border-accentGreen/30 shadow-[0_0_60px_rgba(0,255,157,0.1)] relative overflow-hidden text-center">
+                <div class="relative z-10 max-w-4xl mx-auto">
+                    <div class="inline-block px-4 py-2 rounded-full bg-accentGreen text-black text-xs font-bold mb-8 tracking-[0.2em] uppercase" ng-bind="content.phase5_label"></div>
                     <div class="text-accentGreen text-7xl mb-8"><i class="fa-solid fa-trophy"></i></div>
-                    <h3 class="text-4xl font-bold text-white mb-6">Capstone Project</h3>
-                    <p class="text-xl text-muted mb-8 leading-relaxed" ng-bind="content.capstone_main_desc"></p>
-                    <div class="p-6 bg-white/5 rounded-2xl border-l-4 border-accentGreen italic text-base text-gray-300">
-                        "<span ng-bind="content.capstone_quote"></span>"
+                    <h2 class="text-5xl md:text-6xl font-black text-white mb-8" ng-bind="content.phase5_title"></h2>
+                    <p class="text-xl text-muted mb-12 leading-relaxed" ng-bind="content.phase5_desc"></p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                        <div class="bg-white/5 p-6 rounded-xl border-l-4 border-accentGreen"><h4 class="font-bold text-white mb-2">Product</h4><p class="text-sm text-gray-400" ng-bind="content.phase5_feat_1"></p></div>
+                        <div class="bg-white/5 p-6 rounded-xl border-l-4 border-accentGreen"><h4 class="font-bold text-white mb-2">Defense</h4><p class="text-sm text-gray-400" ng-bind="content.phase5_feat_2"></p></div>
+                        <div class="bg-white/5 p-6 rounded-xl border-l-4 border-accentGreen"><h4 class="font-bold text-white mb-2">Future</h4><p class="text-sm text-gray-400" ng-bind="content.phase5_feat_3"></p></div>
                     </div>
                 </div>
             </div>
@@ -317,19 +379,11 @@
                 <div class="overflow-x-auto max-h-[70vh] overflow-y-auto custom-scrollbar">
                     <table class="w-full text-left font-mono [&_td]:p-4 [&_th]:p-4 [&_tr]:border-b [&_tr]:border-gray-800 hover:[&_tbody_tr]:bg-white/5 transition-colors">
                         <thead class="bg-gray-900 text-accentGreen sticky top-0 z-20 font-bold uppercase text-sm tracking-wider shadow-md">
-                        <tr>
-                            <th class="w-16">STT</th>
-                            <th class="w-32">Code</th>
-                            <th ng-bind="content.curriculum_col_name"></th>
-                            <th class="w-24 text-right" ng-bind="content.curriculum_col_term"></th>
-                        </tr>
+                        <tr><th class="w-16">STT</th><th class="w-32">Code</th><th ng-bind="content.curriculum_col_name"></th><th class="w-24 text-right" ng-bind="content.curriculum_col_term"></th></tr>
                         </thead>
                         <tbody class="text-sm text-gray-300 divide-y divide-gray-800">
                         <tr ng-repeat="item in curriculum" ng-class="item.rowClass">
-                            <!-- Header Row -->
                             <td ng-if="item.isHeader" colspan="4" class="font-bold text-xs uppercase tracking-widest py-3 bg-gray-900/80 backdrop-blur sticky top-[53px] z-10 pl-4 border-l-4" ng-class="item.headerClass" ng-bind="item.title"></td>
-
-                            <!-- Data Row -->
                             <td ng-if="!item.isHeader" class="text-center" ng-class="item.sttClass">{{ item.stt }}</td>
                             <td ng-if="!item.isHeader" class="font-bold" ng-class="item.codeClass">{{ item.code }}</td>
                             <td ng-if="!item.isHeader" class="font-medium" ng-class="item.nameClass">{{ item.name }}</td>
@@ -358,9 +412,7 @@
                 </div>
                 <div class="text-left bg-card p-8 rounded-2xl border border-gray-800 min-w-[240px] hover:border-accentGreen transition-colors">
                     <div class="text-gray-500 text-xs uppercase tracking-widest mb-3 font-bold">Email</div>
-                    <div class="text-white font-bold text-xl">
-                        <a href="mailto:tuyensinh@fpt.edu.vn" class="hover:text-accentGreen transition-colors">tuyensinh@fpt.edu.vn</a>
-                    </div>
+                    <div class="text-white font-bold text-xl"><a href="mailto:tuyensinh@fpt.edu.vn" class="hover:text-accentGreen transition-colors">tuyensinh@fpt.edu.vn</a></div>
                 </div>
             </div>
         </div>
@@ -368,63 +420,34 @@
 
 </main>
 
-<!-- 6. ANGULAR APPLICATION (All Logic Here) -->
+<!-- ANGULAR LOGIC -->
 <script>
     var app = angular.module('fptApp', ['ngSanitize']);
 
-    // --- MAIN CONTROLLER ---
-    // QUAN TRỌNG: Sử dụng mảng ['$scope', ...] để không bị lỗi khi nén JS
     app.controller('MainController', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
-
-        // Language Setting
         $scope.lang = 'vi';
         $scope.isSwitching = false;
 
-        // 1. Init: Check LocalStorage
         try {
             var savedLang = localStorage.getItem('fpt_lang');
             $scope.currentLang = savedLang ? savedLang : 'vi';
-        } catch (e) {
-            $scope.currentLang = 'vi';
-        }
+        } catch (e) { $scope.currentLang = 'vi'; }
 
-        // 2. Function to Load Content from API
-        // (Logic này đã được đưa vào setLang để sync animation)
-
-        // 3. Function to Set Language (Animation + API Call)
         $scope.setLang = function(lang) {
             if ($scope.currentLang === lang) return;
-
-            $scope.isSwitching = true; // Trigger fade out
-
-            // Anime.js Fade Out
+            $scope.isSwitching = true;
             anime({
-                targets: '#main-content',
-                opacity: [1, 0],
-                translateY: [0, 20],
-                duration: 400,
-                easing: 'easeInOutQuad',
+                targets: '#main-content', opacity: [1, 0], translateY: [0, 20], duration: 400, easing: 'easeInOutQuad',
                 complete: function() {
-                    // Update State inside Angular
                     $scope.$apply(function() {
                         $scope.currentLang = lang;
                         try { localStorage.setItem('fpt_lang', lang); } catch(e){}
-
-                        // API Call
                         $http.get('/api/content?lang=' + lang).then(function(response) {
                             $scope.content = response.data.content;
                             $scope.curriculum = response.data.curriculum;
-
-                            // Wait for DOM update then Fade In
                             $timeout(function() {
-                                $scope.isSwitching = false; // Remove hidden class
-                                anime({
-                                    targets: '#main-content',
-                                    opacity: [0, 1],
-                                    translateY: [20, 0],
-                                    duration: 400,
-                                    easing: 'easeOutQuad'
-                                });
+                                $scope.isSwitching = false;
+                                anime({ targets: '#main-content', opacity: [0, 1], translateY: [20, 0], duration: 400, easing: 'easeOutQuad' });
                             }, 50);
                         });
                     });
@@ -432,74 +455,52 @@
             });
         };
 
-        // 4. Initial Load
         $http.get('/api/content?lang=' + $scope.currentLang).then(function(response) {
             $scope.content = response.data.content;
             $scope.curriculum = response.data.curriculum;
         });
 
-        // Navigation Sections
         $scope.sections = [
             { id: 'sec-1', name: 'Hero' },
             { id: 'sec-2', name: 'Why FPT' },
             { id: 'sec-3', name: 'Market' },
-            { id: 'sec-4', name: 'Methodology' },
+            { id: 'sec-4', name: 'Method' },
             { id: 'sec-5', name: 'Roadmap' },
-            { id: 'sec-6', name: 'Combo' },
-            { id: 'sec-7', name: 'OJT' },
-            { id: 'sec-8', name: 'Capstone' },
+            { id: 'sec-prep', name: 'Prep' },    // <-- THÊM MỚI TẠI ĐÂY
+            { id: 'sec-phase1', name: 'Phase 1' },
+            { id: 'sec-phase2', name: 'Phase 2' },
+            { id: 'sec-phase3', name: 'OJT' },
+            { id: 'sec-phase4', name: 'Phase 4' },
+            { id: 'sec-phase5', name: 'Capstone' },
             { id: 'sec-9', name: 'Curriculum' },
             { id: 'sec-10', name: 'Closing' }
         ];
 
         $scope.activeSection = 'sec-1';
-
         $scope.scrollTo = function(id) {
             var element = document.getElementById(id);
-            if(element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
+            if(element) element.scrollIntoView({ behavior: 'smooth' });
         };
-
-        $scope.setActiveSection = function(id) {
-            $scope.activeSection = id;
-        };
+        $scope.setActiveSection = function(id) { $scope.activeSection = id; };
     }]);
 
-    // --- SCROLL OBSERVER DIRECTIVE ---
     app.directive('scrollObserver', function() {
         return {
             restrict: 'A',
             link: function(scope, element, attrs) {
                 var id = attrs.id;
-                var options = { threshold: 0.2 };
-
-                // Kiểm tra trình duyệt có hỗ trợ IntersectionObserver không
                 if ('IntersectionObserver' in window) {
                     var observer = new IntersectionObserver(function(entries) {
                         if(entries[0].isIntersecting) {
-                            scope.$applyAsync(function() {
-                                scope.setActiveSection(id);
-                            });
-
+                            scope.$applyAsync(function() { scope.setActiveSection(id); });
                             if(!element.hasClass('animated')) {
                                 element.addClass('animated');
-                                anime({
-                                    targets: element[0].querySelectorAll('.anim-el'),
-                                    opacity: [0, 1],
-                                    translateY: [50, 0],
-                                    duration: 1000,
-                                    easing: 'easeOutExpo',
-                                    delay: anime.stagger(150)
-                                });
+                                anime({ targets: element[0].querySelectorAll('.anim-el'), opacity: [0, 1], translateY: [50, 0], duration: 1000, easing: 'easeOutExpo', delay: anime.stagger(150) });
                             }
                         }
-                    }, options);
+                    }, { threshold: 0.2 });
                     observer.observe(element[0]);
-
-                    scope.$on('$destroy', function() {
-                        observer.disconnect();
-                    });
+                    scope.$on('$destroy', function() { observer.disconnect(); });
                 }
             }
         };
