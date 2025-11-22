@@ -104,7 +104,26 @@ const TRANSLATIONS = {
         curriculum_title: "Lộ trình học chi tiết",
         curriculum_col_name: "Tên Môn Học",
         curriculum_col_term: "Kỳ",
-        closing_title: "Sẵn sàng trở thành Kỹ sư phần mềm toàn cầu cùng Đại học FPT."
+        closing_title: "Sẵn sàng trở thành Kỹ sư phần mềm toàn cầu cùng Đại học FPT.",
+        // --- LABS SECTION (TEXT) ---
+        labs_title: "Lab Innovation Showcase",
+        labs_desc: "Nơi sinh viên hiện thực hóa ý tưởng thành sản phẩm công nghệ.",
+
+        lab_smart_name: "Smart Lab",
+        lab_smart_focus: "Trọng tâm: AI, Kỹ thuật phần mềm & Giải pháp Doanh nghiệp",
+        lab_dx_name: "DX Lab (Digital Transformation)",
+        lab_dx_focus: "Trọng tâm: Hệ thống nhúng, EduTech & Mô phỏng",
+
+        // Projects Title/Desc
+        p1_desc: "Hệ thống thông minh sử dụng GPT-4 để phân tích mô hình trì hoãn và tối ưu hóa lịch trình sinh viên.",
+        p2_desc: "Nền tảng WebSocket cấp doanh nghiệp hỗ trợ triển khai đa cụm và đồng bộ đa nền tảng.",
+        p3_desc: "Giải pháp bán hàng toàn diện cho SME với kho hàng thời gian thực và tích hợp đa thanh toán.",
+        p4_desc: "Ứng dụng lịch và lập lịch toàn diện với quản lý sự kiện, nhắc nhở và cộng tác nhóm.", // Calendros
+
+        p5_desc: "Sáng kiến nghiên cứu dài hạn thiết kế và mô phỏng vệ tinh 3D phục vụ giáo dục và thử nghiệm.",
+        p6_desc: "Phần mềm chấm thi tự động cho môn PRM, giảm thiểu đáng kể khối lượng công việc thủ công.",
+        p7_desc: "Nền tảng tập trung để quản lý thành viên, phân phối dự án và theo dõi kỳ học.",
+        p8_desc: "Game mô phỏng 2D trực quan hóa các hoạt động của phòng Lab và hành trình phát triển vệ tinh."
     },
     en: {
         // HERO
@@ -208,7 +227,24 @@ const TRANSLATIONS = {
         curriculum_title: "Sample Learning Roadmap",
         curriculum_col_name: "Subject Name",
         curriculum_col_term: "Term",
-        closing_title: "Ready to become a Global Software Engineer with FPT University."
+        closing_title: "Ready to become a Global Software Engineer with FPT University.",
+        labs_title: "Lab Innovation Showcase",
+        labs_desc: "Where students turn ideas into technological products.",
+
+        lab_smart_name: "Smart Lab",
+        lab_smart_focus: "Focus: AI, Software Engineering & Enterprise Solutions",
+        lab_dx_name: "DX Lab (Digital Transformation)",
+        lab_dx_focus: "Focus: Embedded Systems, EduTech & Simulation",
+
+        p1_desc: "An intelligent system using GPT-4 to analyze procrastination patterns and optimize student schedules.",
+        p2_desc: "Enterprise-grade WebSocket platform supporting multi-cluster deployment and seamless cross-platform sync.",
+        p3_desc: "Comprehensive point-of-sale solution for SMEs with real-time inventory and multi-payment integration.",
+        p4_desc: "Comprehensive calendar & scheduling app with event management, reminders, and collaboration.", // Calendros
+
+        p5_desc: "Long-term research initiative designing and simulating 3D CubeSats for educational and testing purposes.",
+        p6_desc: "Automated grading software for PRM exams, significantly reducing manual workload for instructors.",
+        p7_desc: "Centralized platform for managing lab members, project distribution, and semester tracking.",
+        p8_desc: "2D simulation game visualizing lab activities and the journey towards satellite development."
     }
 };
 
@@ -287,6 +323,53 @@ const CURRICULUM_RAW = [
     { stt: 48, code: 'SE_GRA_ELE', nameVn: 'Đồ án tốt nghiệp - Kỹ thuật phần mềm', nameEn: 'Graduation Elective - Software Engineering', term: 9, sttClass: 'pl-4 border-l-4 border-rose-500', codeClass: 'text-rose-500 text-lg', nameClass: 'text-rose-500 text-lg font-bold', termClass: 'text-rose-500 text-lg', rowClass: 'bg-rose-500/10' }
 ];
 
+const PROJECTS_DATA = {
+    smart_lab: [
+        {
+            id: 'p1', name: "Smart To-Do List", tag: "AI-Powered Task Management", tech: "AI | React | Laravel",
+            imgs: ["/images/smart_todo_1.png", "/images/smart_todo_2.png"],
+            url: "https://web-track-naver-vietnam-ai-hackatho-ecru.vercel.app/" // Link thật
+        },
+        {
+            id: 'p2', name: "EchoWave", tag: "Real-Time Messaging", tech: "Node.js | Redis | Socket.IO",
+            imgs: ["/images/echowave.png"],
+            url: "https://echowave.positive.io.vn/chat" // Link thật
+        },
+        {
+            id: 'p3', name: "POSitive", tag: "Next-Gen POS System", tech: "Vue.js | Laravel",
+            imgs: ["/images/positive_1.png", "/images/positive_2.png"],
+            url: "https://huseduvn-my.sharepoint.com/:f:/g/personal/nguyenthuongquyen_hsgs19_hus_edu_vn/IgDeMvIdpFxaQYW5dP6wLS5TAZvQZCiYZe1YAjpNR17sf40?e=tX7vjE" // Link thật
+        },
+        {
+            id: 'p4', name: "Calendros", tag: "Calendar & Scheduling", tech: "PHP | Blade | Laravel",
+            imgs: ["/images/calendros_1.png", "/images/calendros_2.png"],
+            url: "https://github.com/makecolour/Calendros" // Link thật
+        }
+    ],
+    dx_lab: [
+        {
+            id: 'p5', name: "Artificial Satellite", tag: "Aerospace Research", tech: "Embedded | IoT",
+            imgs: ["/images/cubesat_1.png", "/images/cubesat_2.png"],
+            url: "#" // Chưa có link
+        },
+        {
+            id: 'p6', name: "PRM Exam Grader", tag: "EduTech Automation", tech: "Software Automation",
+            imgs: ["/images/prm_grader_1.png", "/images/prm_grader_2.png"],
+            url: "#" // Chưa có link
+        },
+        {
+            id: 'p7', name: "Lab Manager", tag: "Internal Tooling", tech: "Web App",
+            imgs: ["/images/lab_manager_1.png"],
+            url: "#" // Chưa có link
+        },
+        {
+            id: 'p8', name: "Lab Simulator 2D", tag: "Gamification", tech: "Game Dev",
+            imgs: ["/images/lab_sim_1.png", "/images/lab_sim_2.png"],
+            url: "#" // Chưa có link
+        }
+    ]
+};
+
 router.get('/content', function(req, res, next) {
     const lang = req.query.lang || 'vi';
 
@@ -307,9 +390,21 @@ router.get('/content', function(req, res, next) {
         return newItem;
     });
 
+    const projects = {
+        smart: PROJECTS_DATA.smart_lab.map(p => ({
+            ...p,
+            desc: content[`${p.id}_desc`] // Map description from Translation
+        })),
+        dx: PROJECTS_DATA.dx_lab.map(p => ({
+            ...p,
+            desc: content[`${p.id}_desc`]
+        }))
+    };
+
     res.json({
         content: content,
-        curriculum: curriculum
+        curriculum: curriculum,
+        projects: projects
     });
 });
 
