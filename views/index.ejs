@@ -512,6 +512,7 @@
                         $http.get('/api/content?lang=' + lang).then(function(response) {
                             $scope.content = response.data.content;
                             $scope.curriculum = response.data.curriculum;
+                            $scope.projects = response.data.projects;
                             $timeout(function() {
                                 $scope.isSwitching = false;
                                 anime({ targets: '#main-content', opacity: [0, 1], translateY: [20, 0], duration: 400, easing: 'easeOutQuad' });
