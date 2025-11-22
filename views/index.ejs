@@ -494,39 +494,66 @@
     app.controller('MainController', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
         $scope.lang = 'vi';
         $scope.isSwitching = false;
+        $scope.cachedData = {}; // Initialize Cache Object
 
         try {
             var savedLang = localStorage.getItem('fpt_lang');
             $scope.currentLang = savedLang ? savedLang : 'vi';
         } catch (e) { $scope.currentLang = 'vi'; }
 
+        // Helper function to update UI data
+        var applyDataToScope = function(data) {
+            $scope.content = data.content;
+            $scope.curriculum = data.curriculum;
+            $scope.projects = data.projects;
+        };
+
         $scope.setLang = function(lang) {
             if ($scope.currentLang === lang) return;
             $scope.isSwitching = true;
+
+            // Animation Out
             anime({
                 targets: '#main-content', opacity: [1, 0], translateY: [0, 20], duration: 400, easing: 'easeInOutQuad',
                 complete: function() {
                     $scope.$apply(function() {
                         $scope.currentLang = lang;
                         try { localStorage.setItem('fpt_lang', lang); } catch(e){}
-                        $http.get('/api/content?lang=' + lang).then(function(response) {
-                            $scope.content = response.data.content;
-                            $scope.curriculum = response.data.curriculum;
-                            $scope.projects = response.data.projects;
+
+                        // CHECK CACHE FIRST
+                        if ($scope.cachedData[lang]) {
+                            // Use cached data
+                            applyDataToScope($scope.cachedData[lang]);
+
+                            // Animation In
                             $timeout(function() {
                                 $scope.isSwitching = false;
                                 anime({ targets: '#main-content', opacity: [0, 1], translateY: [20, 0], duration: 400, easing: 'easeOutQuad' });
                             }, 50);
-                        });
+                        } else {
+                            // Call API if not cached
+                            $http.get('/api/content?lang=' + lang).then(function(response) {
+                                // Save to Cache
+                                $scope.cachedData[lang] = response.data;
+                                applyDataToScope(response.data);
+
+                                // Animation In
+                                $timeout(function() {
+                                    $scope.isSwitching = false;
+                                    anime({ targets: '#main-content', opacity: [0, 1], translateY: [20, 0], duration: 400, easing: 'easeOutQuad' });
+                                }, 50);
+                            });
+                        }
                     });
                 }
             });
         };
 
+        // Initial Load
         $http.get('/api/content?lang=' + $scope.currentLang).then(function(response) {
-            $scope.content = response.data.content;
-            $scope.curriculum = response.data.curriculum;
-            $scope.projects = response.data.projects;
+            // Save initial data to Cache
+            $scope.cachedData[$scope.currentLang] = response.data;
+            applyDataToScope(response.data);
         });
 
         $scope.sections = [
@@ -535,13 +562,13 @@
             { id: 'sec-3', name: 'Market' },
             { id: 'sec-4', name: 'Method' },
             { id: 'sec-5', name: 'Roadmap' },
-            { id: 'sec-prep', name: 'Prep' },
+            { id: 'sec-prep', name: 'Prep' },    // <-- THÊM MỚI TẠI ĐÂY
             { id: 'sec-phase1', name: 'Phase 1' },
             { id: 'sec-phase2', name: 'Phase 2' },
             { id: 'sec-phase3', name: 'OJT' },
             { id: 'sec-phase4', name: 'Phase 4' },
             { id: 'sec-phase5', name: 'Capstone' },
-            { id: 'sec-labs', name: 'Labs'},
+            { id: 'sec-labs', name: 'Labs' },
             { id: 'sec-9', name: 'Curriculum' },
             { id: 'sec-10', name: 'Closing' }
         ];
